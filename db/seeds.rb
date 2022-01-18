@@ -5,3 +5,31 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require "open-uri"
+
+CUISINES = %w[chinese italian japanese french belgian american indian ethiopian cuban indonesian filipino]
+
+puts "🔫 Destroy everything ..."
+User.destroy_all
+Party.destroy_all
+Participate.destroy_all
+
+
+
+user = User.new email: "test0@email.com",
+                password: '123456',
+                password_confirmation: '123456'
+user.save!
+first_user = User.first
+
+PARTY_NAMES = ["Gucci Rouge a Levres Statn Lip Colour 200000", "Gucci Rouge a Levres Statn Lip Colour 200001", "Gucci Rouge a Levres Statn Lip Colour 200002", "Gucci Rouge a Levres Statn Lip Colour 200003", "Gucci Rouge a Levres Statn Lip Colour 200004", "Gucci Rouge a Levres Statn Lip Colour 200005", "Gucci Rouge a Levres Statn Lip Colour 200006"]
+CURRENT_MEMBERS = ["1", "2", "3", "4", "5"]
+
+PARTY_NAMES.each do |party|
+  party = Party.new name: party,
+                    current_member:CURRENT_MEMBERS.sample,
+                    max_member: "5"
+  party.save!
+end
+
+puts "🌲 Seed complete ... #{User.count} Users / #{Party.count} parties / Participants data #{Participate.count}"
