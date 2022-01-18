@@ -15,9 +15,12 @@ Alternatively you can view the server at
 <h1>https://scb10xform.herokuapp.com/</h1>
 
 <h2>The default login details is:</h2>
-<b>email</b>: test0@email.com
-password: 123456
-
+<div>
+  <b>email</b>: test0@email.com
+</div>
+<div>
+  <b>password</b>: 123456
+</div>
 These are snippets of the web app
 
 ![image](https://user-images.githubusercontent.com/79894200/150002574-e67fbf3f-5e2c-4ba2-b624-81499fc22f1f.png)
