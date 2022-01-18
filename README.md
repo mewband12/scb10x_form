@@ -11,6 +11,11 @@ rails server
 ```
 in the command line to launch the server
 
+Alternatively you can view the server at
+```
+https://scb10xform.herokuapp.com/
+```
+
 These are snippets of the web app
 
 ![image](https://user-images.githubusercontent.com/79894200/150002574-e67fbf3f-5e2c-4ba2-b624-81499fc22f1f.png)
