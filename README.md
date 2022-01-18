@@ -14,8 +14,8 @@ in the command line to launch the server
 Alternatively you can view the server at
 <h1>https://scb10xform.herokuapp.com/</h1>
 
-The default login details is:
-email: test0@email.com
+<h2>The default login details is:</h2>
+<b>email</b>: test0@email.com
 password: 123456
 
 These are snippets of the web app
