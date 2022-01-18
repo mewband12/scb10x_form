@@ -12,9 +12,7 @@ rails server
 in the command line to launch the server
 
 Alternatively you can view the server at
-```
-https://scb10xform.herokuapp.com/
-```
+<h1>https://scb10xform.herokuapp.com/</h1>
 
 These are snippets of the web app
 
