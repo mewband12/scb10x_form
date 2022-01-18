@@ -10,10 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_18_123852) do
+ActiveRecord::Schema.define(version: 2022_01_18_140852) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "participates", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "party_id", null: false
+    t.string "participation"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["party_id"], name: "index_participates_on_party_id"
+    t.index ["user_id"], name: "index_participates_on_user_id"
+  end
+
+  create_table "parties", force: :cascade do |t|
+    t.string "max_member"
+    t.string "current_member"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +45,6 @@ ActiveRecord::Schema.define(version: 2022_01_18_123852) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "participates", "parties"
+  add_foreign_key "participates", "users"
 end
