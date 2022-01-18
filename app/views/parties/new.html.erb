@@ -5,7 +5,7 @@
   <h1>Create a Party</h1>
   <%= simple_form_for @party do |f| %>
     <%= f.input :name %>
-    <%= f.input :max_member%>
+    <%= f.input :max_member, input_html: {type: 'number'}%>
     <%= f.submit %>
   <% end %>
 </div>
