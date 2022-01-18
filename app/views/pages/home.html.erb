@@ -1,18 +1,25 @@
 <%= render 'shared/navbar' %>
 <div class="container">
-  <% @parties.each_with_index do |party, index| %>
+  <% @parties.order("id ASC").each_with_index do |party, index| %>
     <% if (index % 2  == 0) %>
       <div class="row my-2">
     <% end %>
       <div class="col-6">
         <div class="card-trip">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+          <img src="https://image.harrods.com/15/15/69/52/15156952_25801611_2048.jpg" />
           <div class="card-trip-infos border-bottom">
             <h2><%= party.name %></h2>
           </div>
           <div class="card-trip-infos">
             <p><%= party.current_member %>/<%= party.max_member %></p>
-            <button type="button" class="btn btn-outline-primary">Join</button>
+            <%= simple_form_for @participate do |f| %>
+              <%= f.input :holder, :as => :hidden, :input_html => { :value => party.id }%>
+              <% if (@participates.where(party_id: party.id).where(user_id: current_user.id)).empty?  %>
+                <%= f.button :submit , 'Join' , class: "btn btn-primary"%>
+              <% else %>
+                <%= f.button :submit , 'Join' , class: "btn btn-primary disabled"%>
+              <% end %>
+            <% end %>
           </div>
         </div>
       </div>

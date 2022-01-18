@@ -23,11 +23,10 @@ user.save!
 first_user = User.first
 
 PARTY_NAMES = ["Gucci Rouge a Levres Statn Lip Colour 200000", "Gucci Rouge a Levres Statn Lip Colour 200001", "Gucci Rouge a Levres Statn Lip Colour 200002", "Gucci Rouge a Levres Statn Lip Colour 200003", "Gucci Rouge a Levres Statn Lip Colour 200004", "Gucci Rouge a Levres Statn Lip Colour 200005", "Gucci Rouge a Levres Statn Lip Colour 200006"]
-CURRENT_MEMBERS = ["1", "2", "3", "4", "5"]
 
 PARTY_NAMES.each do |party|
   party = Party.new name: party,
-                    current_member:CURRENT_MEMBERS.sample,
+                    current_member:"0",
                     max_member: "5"
   party.save!
 end

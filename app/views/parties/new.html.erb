@@ -1,0 +1,11 @@
+<%# Find me in app/views/parties/new.html.erb  %>
+<%= render 'shared/navbar' %>
+
+<div class="container">
+  <h1>Create a Party</h1>
+  <%= simple_form_for @party do |f| %>
+    <%= f.input :name %>
+    <%= f.input :max_member%>
+    <%= f.submit %>
+  <% end %>
+</div>
